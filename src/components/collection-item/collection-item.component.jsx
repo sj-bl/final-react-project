@@ -8,10 +8,10 @@ import { addItem } from "../../redux/cart/cart.actions";
 
 const CollectionItem = ({ item, addItem }) => {
   // console.log(id, name, imageUrl, price);
-
   const { id, name, imageUrl, price } = item;
+
   return (
-    <div key={id} className="collection-item">
+    <div key={`${id}-${name}`} className="collection-item">
       <div
         className="image"
         style={{ backgroundImage: `url(${imageUrl})` }}
