@@ -9,6 +9,7 @@ import {
 import "./checkout.style.scss";
 import { connect } from "react-redux";
 import CheckOutItem from "./../../components/checkout-items/checkout-items.component";
+import Paynow from "../../components/stripe-button/stripe-button.component";
 
 const CheckOut = ({ cartItems, total }) => {
   //   console.log(cartItems);
@@ -35,6 +36,7 @@ const CheckOut = ({ cartItems, total }) => {
         return <CheckOutItem key={cartItem.id} cartItem={cartItem} />;
       })}
       <div className="total">Total: ${total}</div>
+      <Paynow total={total} className="checkout-btn" />
     </div>
   );
 };
